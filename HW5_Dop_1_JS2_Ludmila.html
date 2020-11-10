@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="a" id="a" >
+    <input type="text" name="b" id="b" > = 
+    <input type="text" id="result" name="resultr">
+    <br>
+    <input type="button" id="resultAdd" value="+" onclick="resultAdd()">
+    <input type="button" id="resultMinus" value="-" onclick="resultMinus()">
+    <input type="button" id="resultMult" value="*" onclick="resultMult()">
+    <input type="button" id="resultDiv" value="/" onclick="resultDiv()"> 
+
+    <script>
+        /*
+        Создайте страницу-калькулятор.
+        Разместите на странице два поля ввода и кнопки для арифметических операций над данными
+        введенными в поля ввода. Реализуйте данную страницу двумя способами – с использованием модели
+        DOM Level 0 (через свойства) и DOM Level 2.
+        */           
+
+        function resultAdd() {    
+            let a = parseInt( document.getElementById('a').value);
+            let b = parseInt( document.getElementById('b').value);
+            console.log(a);
+            console.log(b); 
+            let myResult = a + b;
+            result.value = myResult;
+        }
+            
+        function resultMinus() {
+            let a = parseInt( document.getElementById('a').value);
+            let b = parseInt( document.getElementById('b').value);
+            console.log(a);
+            console.log(b); 
+            let myResult = a - b;
+            result.value = myResult;
+        }
+        function resultMult() {
+            let a = parseInt( document.getElementById('a').value);
+            let b = parseInt( document.getElementById('b').value);
+            console.log(a);
+            console.log(b); 
+            let myResult = a * b;
+            result.value = myResult;
+        }
+        function resultDiv() {
+            let a = parseInt( document.getElementById('a').value);
+            let b = parseInt( document.getElementById('b').value);
+            console.log(a);
+            console.log(b);  
+            let myResult = a / b;
+            result.value = myResult;
+        }
+    </script>
+</body>
+</html>

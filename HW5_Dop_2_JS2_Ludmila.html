@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="a" id="a" >
+    <input type="text" name="b" id="b" > = 
+    <input type="text" id="result" name="result">
+    <br>
+    <input type="button" id="resultAdd" value="+">
+    <input type="button" id="resultMinus" value="-">
+    <input type="button" id="resultMult" value="*">
+    <input type="button" id="resultDiv" value="/"> 
+    
+    <script>
+        window.onload = function(){
+            let a = parseInt( document.getElementById("a"));
+            let b = parseInt(document.getElementById("b"));
+
+            let btn1 = document.getElementById("resultAdd");
+            let btn2 = document.getElementById("resultMinus");
+            let btn3 = document.getElementById("resultMult");
+            let btn4 = document.getElementById("resultDiv");
+            
+            btn1.addEventListener('click', function () {
+                a = parseInt( document.getElementById("a").value);
+                b = parseInt(document.getElementById("b").value);
+                console.log(a);
+                console.log(b); 
+                result = a+b;
+                alert(result);
+            });
+            btn2.addEventListener('click', function () {
+                a = parseInt( document.getElementById("a").value);
+                b = parseInt(document.getElementById("b").value);
+                console.log(a);
+                console.log(b);
+                result = a-b;
+                alert(result);
+            });
+            btn3.addEventListener('click', function () {
+                a = parseInt( document.getElementById("a").value);
+                b = parseInt(document.getElementById("b").value);
+                console.log(a);
+                console.log(b);
+                result = a*b;
+                alert(result);
+            });
+            btn4.addEventListener('click', function () { 
+                a = parseInt( document.getElementById("a").value);
+                b = parseInt(document.getElementById("b").value);               
+                console.log(a);
+                console.log(b);
+                result = a/b;
+                alert(result);
+            });
+        }
+    </script>
+</body>
+</html>
