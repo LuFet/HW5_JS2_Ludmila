@@ -14,47 +14,50 @@
     <input type="button" id="resultMinus" value="-">
     <input type="button" id="resultMult" value="*">
     <input type="button" id="resultDiv" value="/"> 
-    
     <script>
-        window.onload = function(){
-            let a = parseInt( document.getElementById("a").value);
-            let b = parseInt(document.getElementById("b").value);
+        /*
+        Задание 1
+        Переделайте сценарий предыдущего примера таким образом, чтобы в поля вводов можно было вводить
+        только целочисленные значения. Используйте для этого модель обработки событий DOM Level 2.*/
+        window.onload = function(){   
+            let pattern = /[0-9]/ ;         
+            let a;
+            let b;
+            let aText= document.getElementById("a");
+            let bText = document.getElementById("b");
 
             let inputText = document.getElementById("result");
             let btn1 = document.getElementById("resultAdd");
             let btn2 = document.getElementById("resultMinus");
             let btn3 = document.getElementById("resultMult");
             let btn4 = document.getElementById("resultDiv");
-            
+            aText.addEventListener('input', function(e){                 
+                    if(pattern.test(aText.value))  
+                        a = parseInt( aText.value);  
+                    else
+                        a= null;
+                    console.log(a);
+
+            });
+            bText.addEventListener('input', function(e){
+                if(pattern.test(bText.value))  
+                    b = parseInt( bText.value); 
+                else 
+                    b= null;
+            });
             btn1.addEventListener('click', function (e) {
-                a = parseInt( document.getElementById("a").value);
-                b = parseInt(document.getElementById("b").value);
-                console.log(a);
-                console.log(b); 
                 result = a+b;
                 inputText.value=result;
             });
             btn2.addEventListener('click', function () {
-                a = parseInt( document.getElementById("a").value);
-                b = parseInt(document.getElementById("b").value);
-                console.log(a);
-                console.log(b);
                 result = a-b;
                 inputText.value=result;
             });
             btn3.addEventListener('click', function () {
-                a = parseInt( document.getElementById("a").value);
-                b = parseInt(document.getElementById("b").value);
-                console.log(a);
-                console.log(b);
                 result = a*b;
                 inputText.value=result;
             });
-            btn4.addEventListener('click', function () { 
-                a = parseInt( document.getElementById("a").value);
-                b = parseInt(document.getElementById("b").value);               
-                console.log(a);
-                console.log(b);
+            btn4.addEventListener('click', function () {  
                 result = a/b;
                 inputText.value=result;
             });

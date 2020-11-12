@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Задание 2
+        Разработайте JavaScript модуль, который поможет привязывать обработчики событий для элементов с
+        использованием модели DOM Level 2.
+        */
+       window.onload=function(){
+        var element = document.getElementById('element');
+
+        function callback() {
+            alert('Привет один раз');
+            element.removeEventListener('click', callback);
+        }
+
+        // Добавление приемника события
+        element.addEventListener('click', callback);
+        alert('Привет');
+       }
+    </script>
+    <input type="text" id="element">    
+</body>
+</html>
